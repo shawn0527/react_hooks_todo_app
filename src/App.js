@@ -52,7 +52,8 @@ function App() {
 
   const completeTodo = index => {
     const newTodos = [...todos]
-    newTodos.isCompleted = true
+    newTodos[index].isCompleted = true
+    setTodos(newTodos)
   }
 
   return (

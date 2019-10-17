@@ -9,7 +9,7 @@ function TodoForm({addTodo}) {
   const [value, setValue] = useState('')
 
   const handleSubmit =  e => {
-    e.preventDefalut()
+    e.preventDefault()
     if(!value) return;
     addTodo(value);
     setValue('')
@@ -23,7 +23,7 @@ function TodoForm({addTodo}) {
 }
 
 function App() {
-  const [todos, setTodo] = useState([
+  const [todos, setTodos] = useState([
     {
       text: 'Learn about React',
       isCompleted: false
@@ -39,8 +39,8 @@ function App() {
   ]);
 
   const addTodo = text => {
-    const newTodos = [...todos, text]
-    setTodo(newTodos)
+    const newTodos = [...todos, {text}]
+    setTodos(newTodos)
   }
 
   return (
